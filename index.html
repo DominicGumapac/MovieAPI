@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Marquee — a TMDB movie explorer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="marquee">
+  <div class="marquee-inner">
+    <button class="brand" id="logoBtn" aria-label="Marquee home">
+      <span class="mark"></span>
+      <span class="brand-name display">Marquee</span>
+      <span class="brand-sub">a small window into TMDB</span>
+    </button>
+    <form class="search-form" id="searchForm">
+      <input type="text" id="searchInput" placeholder="Search for a film…" autocomplete="off">
+    </form>
+  </div>
+</header>
+
+<section class="hero">
+  <h1 class="display" id="heroTitle">What's worth watching tonight?</h1>
+  <p id="heroSub">Browse what's popular, trending, or top-rated right now — pulled live from The Movie Database.</p>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <h2 id="listTitle">Popular</h2>
+    <div class="tabs" id="tabs">
+      <button class="tab active" data-list="popular">Popular</button>
+      <button class="tab" data-list="top_rated">Top rated</button>
+      <button class="tab" data-list="now_playing">In theaters</button>
+      <button class="tab" data-list="upcoming">Upcoming</button>
+    </div>
+  </div>
+  <div class="grid" id="grid"></div>
+  <div class="state-msg" id="stateMsg" style="display:none;"></div>
+</section>
+
+<footer>
+  This product uses the TMDB API but is not endorsed or certified by TMDB. Movie data is fetched through a server-side proxy that keeps the API key private.
+</footer>
+
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal" id="modal" role="dialog" aria-modal="true"></div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
