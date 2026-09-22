@@ -1,5 +1,4 @@
-# Marquee — a TMDB movie explorer
-
+# MobiSearch
 A small movie browser built on [The Movie Database (TMDB)](https://www.themoviedb.org/) API. Browse popular, top-rated, in-theaters, and upcoming films, search by title, and open a detail view with cast, overview, and ratings.
 
 The API key lives only on the server, as a Netlify environment variable — it's never sent to the browser. The frontend calls a small serverless function (`netlify/functions/tmdb.js`), which adds the key and forwards the request to TMDB.
@@ -14,15 +13,6 @@ netlify/functions/tmdb.js     serverless function that holds the API key and pro
 netlify.toml                  tells Netlify where the functions and site root are
 .env.example                  template for local environment variables
 ```
-
-## Local development
-
-1. Install the [Netlify CLI](https://docs.netlify.com/cli/get-started/): `npm install -g netlify-cli`
-2. Copy `.env.example` to `.env` and paste in your TMDB API key (the "API Key (v3 auth)" value from [themoviedb.org/settings/api](https://www.themoviedb.org/settings/api)).
-3. Run `netlify dev`. This serves the static site *and* runs the function locally, reading `TMDB_API_KEY` from `.env`.
-4. Open the local URL it prints (usually `http://localhost:8888`).
-
-Opening `index.html` directly in a browser (without `netlify dev`) won't work — there's no server to run the function, so `/.netlify/functions/tmdb` won't resolve.
 
 ## Deploying to Netlify
 
@@ -43,7 +33,3 @@ Plain HTML, CSS, and vanilla JavaScript on the frontend; a single Netlify Functi
 ## Attribution
 
 This product uses the TMDB API but is not endorsed or certified by TMDB.
-
-## License
-
-MIT — do whatever you like with it.
